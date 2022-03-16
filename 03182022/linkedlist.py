@@ -27,7 +27,9 @@ class SLinkedList:
 
   def pop(self):
     temp = self.head
-    if temp != None:
+    if temp == None:
+      raise LookupError('Attempt to pop item from empty stack')
+    else:
       self.head = temp.next
       temp.next = None
     return temp
