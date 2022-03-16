@@ -133,19 +133,6 @@ class SLinkedList:
       temp.next = None
       return temp
 
-  def max(self):
-    temp = self.head
-    if not temp:
-      return None
-    m = temp.value
-    while temp:
-      #print("debug")
-      #print(temp)
-      m = temp.value if temp.value > m else m
-      #print(m)
-      temp = temp.next
-    return m
-
   def pretty_print(self):
     string = "Singly linked list:\n"
     if self.head:
