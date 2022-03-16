@@ -56,7 +56,7 @@ print(L.to_s())
 L.pop()
 print(L.to_s())
 print("\nlength\n")
-print(L.len())
+print(L.length())
 
 M = SLinkedList()
 M.add_all([5,50,500,5000])

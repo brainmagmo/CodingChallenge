@@ -104,7 +104,7 @@ class SLinkedList:
 
   def insert_at(self, value, index):
     new_node = value if isinstance(value, Node) else Node(value)
-    l = self.len()
+    l = self.length()
     if index == 0 or index == -l:
       return self.push(value)
 
@@ -116,7 +116,7 @@ class SLinkedList:
       return self
 
   def remove_at(self, index):    
-    l = self.len()
+    l = self.length()
     if index == 0 or index == -l:
       return self.pop()
 
@@ -142,7 +142,7 @@ class SLinkedList:
     return string
 
 def intersection(list1, list2):
-  delta = list1.len() - list2.len()
+  delta = len(list1) - len(list2)
   current1 = list1.head
   curren2 = list2.head
   while(delta>0):
