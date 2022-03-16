@@ -21,7 +21,7 @@ class Stack:
   def max(self):
     temp = self.head
     if not temp:
-      return None
+      raise LookupError('Attempt to search empty stack')
     m = temp.value
     while temp:
       #print("debug")
