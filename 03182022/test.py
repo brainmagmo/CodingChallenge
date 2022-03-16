@@ -1,6 +1,8 @@
 from linkedlist import Node, SLinkedList, intersection
+from stack import Stack
 
 #j = Node()
+#k = Stack()
 
 ending = SLinkedList()
 ending.add_all(['a',50,Node('c')])
