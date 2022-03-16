@@ -8,7 +8,11 @@ class Node:
 
   #assuming nodes with same value are the same node
   def equals(self, other):
-    return self == other or (isinstance(other, Node) and self.value == other.value)
+    return isinstance(other, Node) and self.value == other.value
+    #and self.next == other.next
+
+  def __eq__(self, other):
+    return self.equals(other)
 
 
 class SLinkedList:
@@ -127,18 +131,42 @@ class SLinkedList:
       temp.next = None
       return temp
 
-  def to_s(self):
+  def max(self):
+    temp = self.head
+    if not temp:
+      return None
+    m = temp.value
+    while temp:
+      #print("debug")
+      #print(temp)
+      m = temp.value if temp.value > m else m
+      #print(m)
+      temp = temp.next
+    return m
+
+  def pretty_print(self):
     string = "Singly linked list:\n"
     if self.head:
       temp = self.head
       i = 0
       while temp.next:
-        string += "Value of node at index" + str(i) + ": " + str(temp.value) + "\n"
+        string += "Value of node at index " + str(i) + ": " + str(temp.value) + "\n"
         temp = temp.next
         i += 1
-      string += "Value of node at index" + str(i) + ": " + str(temp.value) +"\n"
+      string += "Value of node at index " + str(i) + ": " + str(temp.value) +"\n"
     else:
         string = "Empty list"
+    return string
+
+  def __str__(self):
+    string = "["
+    temp = self.head
+    while temp:
+      string += str(temp.value)
+      if temp.next:
+        string += ", "
+      temp = temp.next
+    string += "]"
     return string
 
 def intersection(list1, list2):
