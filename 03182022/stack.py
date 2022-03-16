@@ -2,11 +2,20 @@ from linkedlist import Node
 class Stack:
   def __init__(self):
     self.head = None
+    self.max_head = None
 
-  def push(self, value):
+  def push(self, new_value):
     temp = self.head
-    self.head = value if isinstance(value, Node) else Node(value)
+    test = self.max_head
+    if not isinstance(new_value, Node):
+      new_value = Node(new_value)
+    self.head = new_value
     self.head.next = temp
+    if not test or test.value < new_value.value:
+      self.max_head = Node(new_value.value)
+    else:
+      self.max_head = Node(test.value)
+    self.max_head.next = test
     return self
 
   def pop(self):
@@ -15,21 +24,12 @@ class Stack:
       raise LookupError('Attempt to pop item from empty stack')
     else:
       self.head = temp.next
+      self.max_head = self.max_head.next
       temp.next = None
     return temp
   
   def max(self):
-    temp = self.head
-    if not temp:
-      raise LookupError('Attempt to search empty stack')
-    m = temp.value
-    while temp:
-      #print("debug")
-      #print(temp)
-      m = temp.value if temp.value > m else m
-      #print(m)
-      temp = temp.next
-    return m
+    return self.max_head.value
 
   def __len__(self):
     i = 0

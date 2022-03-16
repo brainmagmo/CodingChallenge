@@ -2,29 +2,41 @@ from linkedlist import Node, SLinkedList, intersection
 from stack import Stack
 
 #j = Node()
-#k = Stack()
+# k = Stack()
+# try:
+#     print(k.max())
+# except AttributeError:
+#     print('max_error1 caught')
 
-ending = SLinkedList()
-ending.add_all(['a',50,Node('c')])
-left = SLinkedList()
-left.add_all([50.5,'foo',{'key':'value'}])
-right = SLinkedList()
-right.add_all(['virginia',[1,2,3],'marco','polo','green',1000,100000.5,SLinkedList.__dict__,'z'])
-#print(right.at_index(-2).value)
-right.get_tail().next = ending.head
-left.get_tail().next = ending.head.next
-print("expected: 50\nactual:")
-print(intersection(left,right).value)
+# for i in [4,3,5,2,6,1,7]:
+#     k.push(i)
+#     print("i: " + str(i) + " kmax: " + str(k.max()))
 
-farleft = SLinkedList()
-farleft.push(1).add_all([2,3])
-farleft.get_at(-1).next = left.get_at(-2)
+# for i in range(6):
+#     print(k.pop().value)
+#     print("max: " + str(k.max()))
 
-centrist = SLinkedList()
-centrist.push(left.get_at(-1))
-centrist.push('talkingpoints')
-print("expected: c\nactual:")
-print(intersection(farleft,centrist).value)
+# ending = SLinkedList()
+# ending.add_all(['a',50,Node('c')])
+# left = SLinkedList()
+# left.add_all([50.5,'foo',{'key':'value'}])
+# right = SLinkedList()
+# right.add_all(['virginia',[1,2,3],'marco','polo','green',1000,100000.5,SLinkedList.__dict__,'z'])
+# #print(right.at_index(-2).value)
+# right.get_tail().next = ending.head
+# left.get_tail().next = ending.head.next
+# print("expected: 50\nactual:")
+# print(intersection(left,right).value)
+
+# farleft = SLinkedList()
+# farleft.push(1).add_all([2,3])
+# farleft.get_at(-1).next = left.get_at(-2)
+
+# centrist = SLinkedList()
+# centrist.push(left.get_at(-1))
+# centrist.push('talkingpoints')
+# print("expected: c\nactual:")
+# print(intersection(farleft,centrist).value)
 
 # if([]):
 #   print("truthy")
