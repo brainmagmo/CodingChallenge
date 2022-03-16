@@ -15,4 +15,3 @@ Do this in 0( m + n) time (where m and n are the lengths of the lists) and const
 
 Each method should run in constant time.
 
-My Linked List works as a stack
