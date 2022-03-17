@@ -11,11 +11,9 @@ class Stack:
       new_value = Node(new_value)
     self.head = new_value
     self.head.next = temp
-    if not test or test.value < new_value.value:
+    if not test or test.value <= new_value.value:
       self.max_head = Node(new_value.value)
-    else:
-      self.max_head = Node(test.value)
-    self.max_head.next = test
+      self.max_head.next = test
     return self
 
   def pop(self):
@@ -24,7 +22,7 @@ class Stack:
       raise LookupError('Attempt to pop item from empty stack')
     else:
       self.head = temp.next
-      self.max_head = self.max_head.next
+      self.max_head = self.max_head.next if temp.value == self.max_head.value else self.max_head
       temp.next = None
     return temp
   
