@@ -1,3 +1,6 @@
+#@Author: Trevor Kleinstuber
+#@Last Modified: 17 March 2022
+
 from linkedlist import Node
 class Stack:
   def __init__(self):

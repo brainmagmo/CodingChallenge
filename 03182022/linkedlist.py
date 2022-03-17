@@ -1,18 +1,17 @@
 #@Author: Trevor Kleinstuber
-#@Last Modified: 15 March 2022
+#@Last Modified: 17 March 2022
 
 class Node:
   def __init__(self, value=None):
     self.value = value
     self.next = None
 
-  #assuming nodes with same value are the same node
   def equals(self, other):
     return isinstance(other, Node) and self.value == other.value
-    #and self.next == other.next
 
-  def __eq__(self, other):
-    return self.equals(other)
+  #assuming nodes with same value are the same node
+  # def __eq__(self, other):
+  #   return self.equals(other)
 
 
 class SLinkedList:
@@ -168,26 +167,7 @@ def intersection(list1, list2):
   while(delta<0):
     curren2 = curren2.next
     delta += 1
-  while(not current1.equals(curren2)):
+  while not current1 == curren2:
     current1 = current1.next
     curren2 = curren2.next
   return current1
-
-# def find_intesection(l1, l2):
-#   # if(not(isinstance(l1, SLinkedList) and isinstance(l2, SLinkedList))):
-#   #   raise TypeError
-#   this = l1.head
-#   while(this != None):
-#     this.checked = True
-#     this = this.next
-#   that = l2.head
-#   while(not that.checked):
-#     that = that.next
-#   r = None
-#   if(that.checked):
-#      r = that
-#   this = l1.head
-#   while(this != None):
-#     this.checked = False
-#     this = this.next
-#   return r

@@ -3,6 +3,9 @@ from stack import Stack
 
 #j = Node()
 # k = Stack()
+#@Author: Trevor Kleinstuber
+#@Last Modified: 17 March 2022
+
 # try:
 #     print(k.max())
 # except AttributeError:
