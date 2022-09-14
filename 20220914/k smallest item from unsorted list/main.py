@@ -33,7 +33,7 @@ def insert_sorted_small_to_big(arr, num):
                 arr[0] = num
     
     
-arr_test = [10, 100, 1, 1000, -1, 50, 33, 66, 77]
+arr_test = [10, 100, 1, 1000, -1, 50, 10, 66, 77]
 print(f"1-th biggest input is {k_biggest_optimise(arr_test, 1)} [correct answer:{k_biggest(arr_test, 1)}]")
 print(f"2-th biggest input is {k_biggest_optimise(arr_test, 2)} [correct answer:{k_biggest(arr_test, 2)}]")
 print(f"3-th biggest input is {k_biggest_optimise(arr_test, 3)} [correct answer:{k_biggest(arr_test, 3)}]")
